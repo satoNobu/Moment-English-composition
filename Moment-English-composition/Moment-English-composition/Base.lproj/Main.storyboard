@@ -88,7 +88,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="これはいい本です。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNe-1G-iFe" userLabel="QuestionText">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="これはいい本です。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BNe-1G-iFe" userLabel="QuestionText">
                                 <rect key="frame" x="0.0" y="193.5" width="375" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -106,28 +106,28 @@
                                 <state key="normal" title="回答を見る">
                                     <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="showAnswer:" destination="bF6-Fp-Rai" eventType="touchUpInside" id="TSo-wE-iUQ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kG8-tN-bH4" userLabel="TransitionBtn">
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHR-rL-1S2">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="30"/>
-                                        <state key="normal" title="戻る">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvt-qS-AT4">
-                                        <rect key="frame" x="202.5" y="0.0" width="172.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <state key="normal" title="次へ">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapNextBtn:" destination="bF6-Fp-Rai" eventType="touchUpInside" id="dJ7-cd-xOp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qzn-vA-U4Z" userLabel="AnswerView">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qzn-vA-U4Z" userLabel="AnswerView">
                                 <rect key="frame" x="12.5" y="373.5" width="350" height="202"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a good book." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzo-J1-iWn">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This is a good book." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzo-J1-iWn">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -195,6 +195,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pF4-SS-TdB"/>
                     </view>
+                    <connections>
+                        <outlet property="anserView" destination="qzn-vA-U4Z" id="jPE-QG-LH0"/>
+                        <outlet property="answerText" destination="qzo-J1-iWn" id="uPz-w4-y3l"/>
+                        <outlet property="nextBtn" destination="lvt-qS-AT4" id="AWS-1i-0dP"/>
+                        <outlet property="questionText" destination="BNe-1G-iFe" id="oBo-lL-vko"/>
+                        <outlet property="titleLabel" destination="Xha-RT-2YK" id="x3a-mk-fxl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7L-Zx-CY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

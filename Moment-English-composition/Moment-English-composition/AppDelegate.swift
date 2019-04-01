@@ -91,10 +91,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for csvStr in csvArray {
             let splitStr = csvStr.components(separatedBy: ",")
             let data = QustionData()
-            data.major = splitStr[0]
-            data.minor = splitStr[1]
-            data.question = splitStr[2]
-            data.answer = splitStr[3]
+            data.sortNum = splitStr[0].hashValue
+            data.major = splitStr[1]
+            data.minor = splitStr[2]
+            data.question = splitStr[3]
+            data.answer = splitStr[4]
             data.save()
         }
         

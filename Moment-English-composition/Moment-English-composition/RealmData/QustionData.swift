@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class QustionData: Object {
+    @objc dynamic var sortNum = 0
     @objc dynamic var major = ""
     @objc dynamic var minor = ""
     @objc dynamic var question = ""
@@ -36,5 +37,12 @@ class QustionData: Object {
         
         let distinctMajors = Set(realm.objects(QustionData.self).value(forKey: "major") as! [String])
         return Array(distinctMajors)
+    }
+    
+    static func getDatasByMajor(majorKey: String) -> Results<QustionData> {
+        let realm = try! Realm()
+        
+        let distinctMajors = realm.objects(QustionData.self).filter("major==%@", majorKey)
+        return distinctMajors
     }
 }
