@@ -13,10 +13,13 @@ class QutestionTableViewController: UIViewController, UITableViewDataSource, UIT
     
     // cellの識別子
     let cellIdentifier = "quesionCell"
-    var list:[String] = ["1","2"]
+    var list:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(list)
+        list = QustionData.distinctByMajor()
+        print(list)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -38,8 +41,8 @@ class QutestionTableViewController: UIViewController, UITableViewDataSource, UIT
     // セルが押下された時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "QuestionVC")
-        vc.title = list[indexPath.row]
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuestionVC") as! QuestionViewController
+        vc.majorKey = list[indexPath.row]
         
         self.present(vc, animated: true, completion: nil)
     }
