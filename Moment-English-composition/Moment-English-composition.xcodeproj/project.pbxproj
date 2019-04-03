@@ -10,8 +10,10 @@
 		42A924D522507C1A0041A59F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A924D422507C1A0041A59F /* Realm.framework */; };
 		42AF198122507D46005B36C5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AF198022507D46005B36C5 /* RealmSwift.framework */; };
 		42AF1984225083FF005B36C5 /* QustionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF1983225083FF005B36C5 /* QustionData.swift */; };
-		42AF198722509009005B36C5 /* initCSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = 42AF198622509009005B36C5 /* initCSV.csv */; };
+		42AF198722509009005B36C5 /* initData.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 42AF198622509009005B36C5 /* initData.tsv */; };
 		42AF198A2250BED5005B36C5 /* FileOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF19892250BED5005B36C5 /* FileOperation.swift */; };
+		42AF198D22538D3E005B36C5 /* OK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42AF198C22538D3D005B36C5 /* OK.mp3 */; };
+		42AF198F22539CD9005B36C5 /* NG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42AF198E22539CD9005B36C5 /* NG.mp3 */; };
 		42B99E94224F8075005AFF6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B99E93224F8075005AFF6B /* AppDelegate.swift */; };
 		42B99E99224F8075005AFF6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B99E97224F8075005AFF6B /* Main.storyboard */; };
 		42B99E9B224F8078005AFF6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B99E9A224F8078005AFF6B /* Assets.xcassets */; };
@@ -26,8 +28,10 @@
 		42A924D422507C1A0041A59F /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AF198022507D46005B36C5 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AF1983225083FF005B36C5 /* QustionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QustionData.swift; sourceTree = "<group>"; };
-		42AF198622509009005B36C5 /* initCSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = initCSV.csv; sourceTree = "<group>"; };
+		42AF198622509009005B36C5 /* initData.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = initData.tsv; sourceTree = "<group>"; };
 		42AF19892250BED5005B36C5 /* FileOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOperation.swift; sourceTree = "<group>"; };
+		42AF198C22538D3D005B36C5 /* OK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OK.mp3; sourceTree = "<group>"; };
+		42AF198E22539CD9005B36C5 /* NG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NG.mp3; sourceTree = "<group>"; };
 		42B99E90224F8075005AFF6B /* Moment-English-composition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moment-English-composition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B99E93224F8075005AFF6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B99E98224F8075005AFF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,18 +61,19 @@
 		42AF1982225083E3005B36C5 /* RealmData */ = {
 			isa = PBXGroup;
 			children = (
-				42AF198522508F42005B36C5 /* initCSV */,
+				42AF198B22538B6E005B36C5 /* SoundData */,
+				42AF198522508F42005B36C5 /* initData */,
 				42AF1983225083FF005B36C5 /* QustionData.swift */,
 			);
 			path = RealmData;
 			sourceTree = "<group>";
 		};
-		42AF198522508F42005B36C5 /* initCSV */ = {
+		42AF198522508F42005B36C5 /* initData */ = {
 			isa = PBXGroup;
 			children = (
-				42AF198622509009005B36C5 /* initCSV.csv */,
+				42AF198622509009005B36C5 /* initData.tsv */,
 			);
-			path = initCSV;
+			path = initData;
 			sourceTree = "<group>";
 		};
 		42AF19882250902D005B36C5 /* Common */ = {
@@ -77,6 +82,23 @@
 				42AF19892250BED5005B36C5 /* FileOperation.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		42AF198B22538B6E005B36C5 /* SoundData */ = {
+			isa = PBXGroup;
+			children = (
+				42AF19902253A50B005B36C5 /* Part1-1 */,
+				42AF198E22539CD9005B36C5 /* NG.mp3 */,
+				42AF198C22538D3D005B36C5 /* OK.mp3 */,
+			);
+			path = SoundData;
+			sourceTree = "<group>";
+		};
+		42AF19902253A50B005B36C5 /* Part1-1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Part1-1";
 			sourceTree = "<group>";
 		};
 		42B99E87224F8075005AFF6B = {
@@ -200,10 +222,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AF198D22538D3E005B36C5 /* OK.mp3 in Resources */,
 				42B99E9E224F8078005AFF6B /* LaunchScreen.storyboard in Resources */,
-				42AF198722509009005B36C5 /* initCSV.csv in Resources */,
+				42AF198722509009005B36C5 /* initData.tsv in Resources */,
 				42B99E9B224F8078005AFF6B /* Assets.xcassets in Resources */,
 				42B99E99224F8075005AFF6B /* Main.storyboard in Resources */,
+				42AF198F22539CD9005B36C5 /* NG.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

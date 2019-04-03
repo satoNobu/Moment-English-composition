@@ -87,15 +87,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func insertSeedData() {
-        let csvArray = FileOperation.csvLoad(fileName: "initCSV")
+        let csvArray = FileOperation.tsvLoad(fileName: "initData")
         for csvStr in csvArray {
-            let splitStr = csvStr.components(separatedBy: ",")
+            let splitStr = csvStr.components(separatedBy: "\t")
             let data = QustionData()
             data.sortNum = splitStr[0].hashValue
             data.major = splitStr[1]
             data.minor = splitStr[2]
             data.question = splitStr[3]
             data.answer = splitStr[4]
+            data.soundName = splitStr[5]
             data.save()
         }
         

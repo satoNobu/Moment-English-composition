@@ -11,11 +11,11 @@ import Foundation
 class FileOperation {
     
     // csvをStringの配列に変換
-    static func csvLoad(fileName: String) -> [String] {
+    static func tsvLoad(fileName: String) -> [String] {
         // csvファイルを格納するための配列
         var csvArray: [String] = []
         // csvファイルの読み込み
-        let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")
+        let csvBundle = Bundle.main.path(forResource: fileName, ofType: "tsv")
         do {
             // csvBundleのパスを読み込み、UTF8に文字コードw変換してNSStringに格納
             let tsvData = try String(contentsOfFile: csvBundle!,

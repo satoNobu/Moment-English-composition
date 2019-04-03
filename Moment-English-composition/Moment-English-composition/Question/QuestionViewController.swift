@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class QuestionViewController: UIViewController {
 
@@ -20,6 +21,8 @@ class QuestionViewController: UIViewController {
     
     var indexCount = 0
     var maxCount = 0
+    
+    var audioPlayer: AVAudioPlayer!
     
     var majorKey: String = ""
     var questionDatas: Results<QustionData>!
@@ -37,6 +40,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func showAnswer(_ sender: Any) {
         anserView.isHidden = false
+        playSound(name: "OK")
     }
     
     @IBAction func tapNextBtn(_ sender: Any) {
@@ -57,6 +61,27 @@ class QuestionViewController: UIViewController {
         anserView.isHidden = true
         if (indexCount + 1) == maxCount {
             nextBtn.setTitle("end", for: .normal)
+        }
+    }
+    @IBAction func playSound(_ sender: Any) {
+        playSound(name: questionDatas[indexCount].soundName)
+    }
+}
+
+extension QuestionViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        do {
+            // インスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer.delegate = self
+            // 音の再生
+            audioPlayer.play()
+        } catch {
+            print("音源ファイルが見つかりません")
         }
     }
 }

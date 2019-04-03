@@ -15,6 +15,7 @@ class QustionData: Object {
     @objc dynamic var minor = ""
     @objc dynamic var question = ""
     @objc dynamic var answer = ""
+    @objc dynamic var soundName = ""
     
     // majorにインデックスを貼る
     override static func indexedProperties() -> [String] {
